@@ -13,7 +13,7 @@ Redis::Schema -
 =head1 SYNOPSIS
 
   package Your::Redis::Schema::Base;
-  use Redis::Schema::Base;
+  use base 'Redis::Schema::Base';
 
   package Your::Redis::Schema::Content;
   use base 'Your::Redis::Schema::Base';
