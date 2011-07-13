@@ -12,7 +12,22 @@ Redis::Schema -
 
 =head1 SYNOPSIS
 
-  use Redis::Schema;
+  package Your::Redis::Schema::Base;
+  use Redis::Schema::Base;
+
+  package Your::Redis::Schema::Content;
+  use base 'Your::Redis::Schema::Base';
+
+  
+  package Your::Redis::Factory;
+  use base 'Redis::Schema::Factory';
+
+  pacakge Your::Module;
+
+  my $r = Your::Redis::Factory->create('Content');
+
+  $r->hset('key','value');
+
 
 =head1 DESCRIPTION
 
